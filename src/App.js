@@ -38,12 +38,38 @@ class App extends React.Component {
       completed: false
     };
   }
+
+  handleChanges = event => {
+    console.log("event: ", event.target.value);
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+
+  addTodo = event => {
+    event.preventDefault();
+    const newTodo = {
+      task: this.state.task,
+      id: this.state.id,
+      completed: this.state.completed
+    };
+
+    this.setState({
+      todos: [...this.state.todos, newTodo]
+    });
+    console.log(this.state.todos);
+  };
+
   render() {
     return (
-      <div>
+      <div className="app">
         <h2>Welcome to To-Doozle!</h2>
         <TodoList appProp={this.state.todos} />
-        <TodoForm />
+        <TodoForm
+          task={this.state.task}
+          handleChanges={this.handleChanges}
+          addTodo={this.addTodo}
+        />
       </div>
     );
   }

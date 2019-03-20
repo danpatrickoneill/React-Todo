@@ -10,6 +10,7 @@ const TodoForm = props => {
         name="task"
         placeholder="Task"
         // onChange goes here
+        onChange={props.handleChanges}
       />
       {/* <input
         type="text"
@@ -25,8 +26,8 @@ const TodoForm = props => {
         placeholder="Completed?"
         // onChange goes here
       /> */}
-      <button onClick={console.log("Add todo")}>Add Todo</button>
-      <button onClick={console.log("Clear completed")}>Clear Completed</button>
+      <button onClick={props.addTodo}>Add Todo</button>
+      <button>Clear Completed</button>
     </form>
   );
 };
