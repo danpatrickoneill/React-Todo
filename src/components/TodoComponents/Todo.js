@@ -7,9 +7,9 @@ class Todo extends React.Component {
   }
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     return (
-      <p key={this.props.todoProp.id} completed={this.props.todoProp.completed}>
+      <p className="todo" completed={this.props.todoProp.completed}>
         {this.props.todoProp.task}
       </p>
     );
