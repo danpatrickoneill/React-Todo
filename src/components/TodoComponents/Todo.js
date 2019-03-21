@@ -1,21 +1,23 @@
 import React from "react";
 
-class Todo extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    // console.log(this.props);
-    return (
-      // Added toString() here due to console error; removing now
-      <p className="todo" completed={this.props.todoProp.completed}>
-        {this.props.todoProp.task}
-      </p>
-    );
-  }
-}
+const Todo = props => {
+  // console.log(this.props);
+  return (
+    // Added toString() here due to console error; still works great!
+    <div
+      className="todo"
+      onClick={() => props.toggleTodo(props.todo.id)}
+      completed={props.todo.completed.toString()}
+      style={
+        props.todo.completed === true
+          ? { textDecoration: "line-through" }
+          : { textDecoration: "none" }
+      }
+    >
+      <p>{props.todo.task}</p>
+    </div>
+  );
+};
 
 // function Todo(props) {
 //   return (
