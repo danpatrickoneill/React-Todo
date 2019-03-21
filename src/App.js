@@ -11,6 +11,11 @@ const todoArr = [
     completed: false
   },
   {
+    task: "Organize Desk",
+    id: 1528817077287,
+    completed: false
+  },
+  {
     task: "Bake Cookies",
     id: 1528817084358,
     completed: false
@@ -23,6 +28,11 @@ const todoArr = [
   {
     task: "Take Out Trash",
     id: 1528817094358,
+    completed: false
+  },
+  {
+    task: "Wash Car",
+    id: 1528817096358,
     completed: false
   }
 ];
@@ -71,7 +81,7 @@ class App extends React.Component {
   searchFilter = term => {
     console.log(term);
     const newTodos = this.state.todos.filter(todo =>
-      todo.task.toLowerCase().includes(term)
+      todo.task.toLowerCase().includes(term.toLowerCase())
     );
     console.log(newTodos);
     this.setState({ todos: newTodos });
