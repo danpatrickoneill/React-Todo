@@ -9,7 +9,8 @@ class Todo extends React.Component {
   render() {
     // console.log(this.props);
     return (
-      <p className="todo" completed={this.props.todoProp.completed}>
+      // Added toString() here due to console error
+      <p className="todo" completed={this.props.todoProp.completed.toString()}>
         {this.props.todoProp.task}
       </p>
     );

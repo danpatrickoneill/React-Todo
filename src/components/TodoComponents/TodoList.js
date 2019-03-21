@@ -16,26 +16,42 @@ import Todo from "./Todo";
 //   }
 // ];
 
-class TodoList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      // todos: todoArr,
-      todos: this.props.appProp
-    };
-  }
+// class TodoList extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       // todos: todoArr,
+//       todos: this.props.appProp
+//     };
+//   }
+//   // componentDidMount() {
+//   //   this.setState({
+//   //     todos: this.props.appProp
+//   //   });
+//   // }
 
-  render() {
-    // console.log(this.state.todos);
-    // console.log(this.props);
-    return (
-      <div className="todoList">
-        {this.state.todos.map(todo => {
-          return <Todo key={todo.id} todoProp={todo} />;
-        })}
-      </div>
-    );
-  }
-}
+//   render() {
+//     // console.log(this.state.todos);
+//     console.log("todolist", this.props.appProp);
+//     console.log("todoliststate", this.state.todos);
+//     return (
+//       <div className="todoList">
+//         {this.state.todos.map(todo => {
+//           return <Todo key={todo.id} todoProp={todo} />;
+//         })}
+//       </div>
+//     );
+//   }
+// }
+
+const TodoList = props => {
+  return (
+    <div className="todoList">
+      {props.appProp.map(todo => {
+        return <Todo key={todo.id} todoProp={todo} />;
+      })}
+    </div>
+  );
+};
 
 export default TodoList;

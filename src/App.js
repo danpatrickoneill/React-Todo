@@ -34,7 +34,7 @@ class App extends React.Component {
     this.state = {
       todos: todoArr,
       task: "",
-      id: Date.now(),
+      id: "",
       completed: false
     };
   }
@@ -50,17 +50,17 @@ class App extends React.Component {
     event.preventDefault();
     const newTodo = {
       task: this.state.task,
-      id: this.state.id,
+      id: Date.now(),
       completed: this.state.completed
     };
 
     this.setState({
       todos: [...this.state.todos, newTodo]
     });
-    console.log(this.state.todos);
   };
 
   render() {
+    console.log("app", this.state.todos);
     return (
       <div className="app">
         <h2>Welcome to To-Doozle!</h2>
