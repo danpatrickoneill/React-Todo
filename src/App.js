@@ -1,6 +1,7 @@
 import React from "react";
 import TodoList from "./components/TodoComponents/TodoList";
 import TodoForm from "./components/TodoComponents/TodoForm";
+import TodoSearch from "./components/TodoComponents/TodoSearch";
 import "./components/TodoComponents/Todo.css";
 
 const todoArr = [
@@ -67,11 +68,21 @@ class App extends React.Component {
     this.setState({ todos: newTodos });
   };
 
+  searchFilter = term => {
+    console.log(term);
+    const newTodos = this.state.todos.filter(todo =>
+      todo.task.toLowerCase().includes(term)
+    );
+    console.log(newTodos);
+    this.setState({ todos: newTodos });
+  };
+
   render() {
     // console.log("app", this.state.todos);
     return (
       <div className="app">
         <h2>Welcome to To-Doozle!</h2>
+        <TodoSearch searchFilter={this.searchFilter} />
         <TodoList todos={this.state.todos} toggleTodo={this.toggleTodo} />
         <TodoForm
           task={this.state.task}

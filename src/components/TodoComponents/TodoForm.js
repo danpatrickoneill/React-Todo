@@ -11,6 +11,7 @@ class TodoForm extends React.Component {
 
   handleChanges = event => {
     console.log("event: ", event.target.value);
+    console.log([event.target.name]);
     this.setState({
       [event.target.name]: event.target.value
     });

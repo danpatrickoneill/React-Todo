@@ -40,7 +40,14 @@ html {
 .todoInput {
   line-height: 2;
   font-size: 20px;
-  padding-left: 5%;
+  padding-left: 10px;
+  font-family: "Lato", sans-serif;
+}
+
+.todoSearch {
+  line-height: 1.5;
+  font-size: 20px;
+  padding-left: 10px;
   font-family: "Lato", sans-serif;
 }
 
