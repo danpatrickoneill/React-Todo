@@ -32,26 +32,15 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todos: todoArr,
-      task: "",
-      id: "",
-      completed: false
+      todos: todoArr
     };
   }
 
-  handleChanges = event => {
-    console.log("event: ", event.target.value);
-    this.setState({
-      [event.target.name]: event.target.value
-    });
-  };
-
-  addTodo = event => {
-    event.preventDefault();
+  addTodo = item => {
     const newTodo = {
-      task: this.state.task,
+      task: item,
       id: Date.now(),
-      completed: this.state.completed
+      completed: false
     };
 
     this.setState({
@@ -60,7 +49,7 @@ class App extends React.Component {
   };
 
   render() {
-    console.log("app", this.state.todos);
+    // console.log("app", this.state.todos);
     return (
       <div className="app">
         <h2>Welcome to To-Doozle!</h2>
